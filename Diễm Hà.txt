@@ -1,1 +1,142 @@
-Diễm Hà
+USE [master]
+GO
+/****** Object:  Database [Restaurant]    Script Date: 9/27/2021 4:00:05 PM ******/
+CREATE DATABASE [Restaurant]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Restaurant', FILENAME = N'D:\CN5\SWP391\Group Activities\Assigment\Restaurant.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Restaurant_log', FILENAME = N'D:\CN5\SWP391\Group Activities\Assigment\Restaurant_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [Restaurant] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Restaurant].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Restaurant] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Restaurant] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Restaurant] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Restaurant] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Restaurant] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Restaurant] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Restaurant] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Restaurant] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Restaurant] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Restaurant] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Restaurant] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Restaurant] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Restaurant] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Restaurant] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Restaurant] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Restaurant] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Restaurant] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Restaurant] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Restaurant] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Restaurant] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Restaurant] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Restaurant] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Restaurant] SET RECOVERY FULL 
+GO
+ALTER DATABASE [Restaurant] SET  MULTI_USER 
+GO
+ALTER DATABASE [Restaurant] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Restaurant] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Restaurant] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Restaurant] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [Restaurant] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [Restaurant] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Restaurant', N'ON'
+GO
+ALTER DATABASE [Restaurant] SET QUERY_STORE = OFF
+GO
+USE [Restaurant]
+GO
+/****** Object:  Table [dbo].[Employee]    Script Date: 9/27/2021 4:00:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employee](
+	[empId] [int] NOT NULL,
+	[email] [nchar](30) NULL,
+	[password] [nchar](10) NOT NULL,
+	[fullName] [nvarchar](50) NOT NULL,
+	[phoneNumber] [int] NULL,
+	[roleId] [int] NOT NULL,
+ CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
+(
+	[empId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Role]    Script Date: 9/27/2021 4:00:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Role](
+	[roleId] [int] NOT NULL,
+	[nameRole] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Role] PRIMARY KEY CLUSTERED 
+(
+	[roleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (1, N'diemha@gmail.com', N'12345', N'Nguyễn Thị Diễm Hà', 46354776, 1)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (2, N'Baongan@gmail.com', N'54321', N'Lê Hồng Bảo Ngân', 67587678, 1)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (3, N'Ali@gmail.com', N'199', N'Ali Balddul', 78564358, 2)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (4, N'Mina@gmail.com', N'6650', N'Mina Anna', 75677678, 4)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (5, N'Tuan@gmail.com', N'7565', N'Phạm Mạnh Tuấn', 53635635, 3)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (6, N'Hong@gmail.com', N'8877', N'Nguyễn Thị Mỹ Hồng', 98967565, 3)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (7, N'Minh@gmail.com', N'5636', N'Phan Hoàng Minh', 75658779, 2)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (8, N'My@gmail.com', N'7886', N'Lê Ánh Mỹ', 76765986, 5)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (9, N'Công@gmail.com', N'7676', N'Trần Tiến Công', 646597696, 3)
+INSERT [dbo].[Employee] ([empId], [email], [password], [fullName], [phoneNumber], [roleId]) VALUES (10, N'KMy@gmail.com', N'7878', N'Nguyễn Khánh My', 987986767, 4)
+GO
+INSERT [dbo].[Role] ([roleId], [nameRole]) VALUES (1, N'Quản lý')
+INSERT [dbo].[Role] ([roleId], [nameRole]) VALUES (2, N'Bồi bàn')
+INSERT [dbo].[Role] ([roleId], [nameRole]) VALUES (3, N'Đầu bếp')
+INSERT [dbo].[Role] ([roleId], [nameRole]) VALUES (4, N'Tiếp tân')
+INSERT [dbo].[Role] ([roleId], [nameRole]) VALUES (5, N'Thu Ngân')
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Role] FOREIGN KEY([roleId])
+REFERENCES [dbo].[Role] ([roleId])
+GO
+ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_Role]
+GO
+USE [master]
+GO
+ALTER DATABASE [Restaurant] SET  READ_WRITE 
+GO
