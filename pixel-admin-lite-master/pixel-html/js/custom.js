@@ -96,3 +96,8 @@ $(document).ready(function () {
                 }
                 e.preventDefault();
             });
+
+            $('.click-to-look').click(function(e) {  
+                alert(1);
+              });
+});
