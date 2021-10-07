@@ -7,39 +7,39 @@ Morris.Area({
 
     }, {
         period: '2011',
-        SiteA: 130,
-        SiteB: 100,
+        SiteA: 330,
+        SiteB: 250,
 
     }, {
         period: '2012',
-        SiteA: 80,
-        SiteB: 60,
+        SiteA: 200,
+        SiteB: 100,
 
     }, {
         period: '2013',
-        SiteA: 70,
-        SiteB: 200,
+        SiteA: 282,
+        SiteB: 220,
 
     }, {
         period: '2014',
-        SiteA: 180,
-        SiteB: 150,
+        SiteA: 380,
+        SiteB: 450,
 
     }, {
         period: '2015',
-        SiteA: 105,
-        SiteB: 90,
+        SiteA: 305,
+        SiteB: 200,
 
     }, {
         period: '2016',
-        SiteA: 250,
-        SiteB: 150,
+        SiteA: 252,
+        SiteB: 380,
 
     }],
     xkey: 'period',
     ykeys: ['SiteA', 'SiteB'],
-    labels: ['Site A', 'Site B'],
-    pointSize: 0,
+    labels: ['New clients', 'Returning clients'],
+    pointSize: 1,
     fillOpacity: 0.7,
     pointStrokeColors: ['#ccc', '#cbb2ae'],
     behaveLikeLine: true,
