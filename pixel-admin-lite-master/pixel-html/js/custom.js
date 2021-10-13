@@ -1,7 +1,7 @@
 $(document).ready(function () {
             $(function () {
                 $(".preloader").fadeOut();
-                $('#side-menu').metisMenu();
+                //$('#side-menu').metisMenu();
             });
 
             //Loads the correct sidebar on window load,
@@ -98,7 +98,7 @@ $(document).ready(function () {
             });
 
             $('.click-to-look').click(function(e) {  
-                alert(1);
+               // alert(1);
             });
               
             $('.click-to-fill-form-emp').click(function(e) {  
@@ -128,35 +128,73 @@ $(document).ready(function () {
                     }
                 });
              
-                fillForm(formFields);
+                fillFormEmployees(formFields);
             });
 
-            function fillForm(data) {
+            function fillFormEmployees(data) {
                 var $form = $('#emp-update');
-                $form.find('input').each(function() {
-                   var $input = $(this);
-                   switch ($input.attr("name")) {
-                    case 'id':
-                        $input.val(data['id']);
-                        break;
-                    case 'fullname':
-                        $input.val(data['FullName']);
-                        break;
-                    case 'address':
-                        $input.val(data['Address']);
-                        break;
-                    case 'phone':
-                        $input.val(data['Phone Number']);
-                        break;
-                    case 'role':
-                        $input.val(data['Role']);
-                        break;
-                    
-                      default:
-                         break;
-             
-                   }
+                $form.find('input').each(function () {
+                    var $input = $(this);
+                    switch ($input.attr("name")) {
+                        case 'id':
+                            $input.val(data['id']);
+                            break;
+                        case 'fullname':
+                            $input.val(data['FullName']);
+                            break;
+                        case 'address':
+                            $input.val(data['Address']);
+                            break;
+                        case 'phone':
+                            $input.val(data['Phone Number']);
+                            break;
+                        case 'role':
+                            $input.val(data['Role']);
+                            break;
+
+                        default:
+                            break;
+
+                    }
                 });
-             }
+            }
+
+        
+            
+
+            $('.detail-order-chef').click(function(e) {  
+                var formFields = [];
+                var $target = $(event.target);
+                var $row = $target.closest('tr');
+                $row.find('td').each(function(index, el) {
+                    var fieldValue = $(el).html();
+                    switch (index) {
+                        case 0:
+                            formFields['tableId'] = fieldValue;
+                            break;
+                       default:
+                            break;
+                    }
+                });
+             
+                fillFormOrder(formFields);
+                var $form = $('#send-id-detail-form');
+                $form.submit();
+            });
+
+            function fillFormOrder(data) {
+                var $form = $('#send-id-detail-form');
+                $form.find('input').each(function () {
+                    var $input = $(this);
+                    switch ($input.attr("name")) {
+                        case 'idOrder':
+                            $input.val(data['tableId']);
+                            break;
+                        default:
+                            break;
+
+                    }
+                });
+            }
 
 });
