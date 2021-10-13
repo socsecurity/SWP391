@@ -429,7 +429,7 @@ hr {
     overflow: hidden;
     white-space: nowrap
 }
-
+     
 .get-code {
     color: #2b2b2b;
     cursor: pointer;
@@ -4332,6 +4332,15 @@ table.focus-on tbody tr.focused th {
 }
 
 tr :hover, .click-to-look:hover  {
+    background-color: #e3e3e3;
+}
+
+tr :hover, .hover-background-color:hover  {
+    background-color: #e3e3e3;
+}
+
+
+tr :hover, .click-to-fill-form-emp:hover  {
     background-color: #e3e3e3;
 }
 
