@@ -1,0 +1,98 @@
+
+<html>
+<head>
+	<title>Welcome to the SWP Restaurant</title>
+	<style>
+body {
+  font-family: Arial;
+  color: black;
+}
+
+.split {
+  height: 90%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #AFEEEE;
+}
+
+.right {
+  right: 0;
+  background-color: #AFEEEE;
+}
+
+label{
+display:inline-block;
+width:400px;
+margin-right:200px;
+text-align:right;
+}
+
+input{
+
+}
+
+fieldset{
+border:none;
+width:200px;
+margin:0px auto;
+}
+h3{
+background-color: #008B8B
+}
+</style>
+</head>
+
+<body>
+	<form action="page1.php" method="post">
+	<h3 align="center" ><br/> View Menu <input type="submit" name="menu" value="View menu"><br/><br/> </h3> 
+	<div class="split left">
+		<h2 align="center"> EMPLOYEE : </h2><br/> 
+		<fieldset>
+			<label for="id">ID  : <input type="text" name="id" > <br/><br/>
+			<label for="fname">Name  :  <input type="text" name="name" ><br/><br/>
+			<label for="wtype">Role   :  <input type="text" name="wtype"> <br/><br/>
+			<label for="pcode">Pincode     :  <input type="text" name="pcode"> <br/><br/>
+			<label for="cno">Contact No  :  <input type="text" name="cno"> <br/><br/>
+			<label for="cemailid">Email ID :  <input type="text" name="cemailid"> <br/><br/>
+		</fieldset>
+		
+		<div align="center">
+			<input type="submit" name="employeeapprove" value="APPROVE">
+		</div>
+	</div>
+	
+	<div class="split right">
+		<h2 align="center">	MENU OPERATION : </h2><br/> 
+		<fieldset>
+			<label for="cid">Food ID  : <input type="text" name="cid"> <br/><br/>
+			<label for="cfname">Food Name  :  <input type="text" name="cfname"> <br/><br/>
+			<label for="caddress">Avg Calory     :  <input type="text" name="caddress"> <br/><br/>
+			<label for="caddress">Ingredient     :  <input type="text" name="nutingre"> <br/><br/>
+			<label for="cstt">Status  : <input type="text" name="cstt"> <br/><br/>
+		</fieldset>
+	
+		<div align="center">	
+			<div>
+				<input type="submit" name="customeradd" value="ADD">
+				<input type="submit" name="customerdelete" value="DELETE">
+				<input type="submit" name="customersearch" value="SEARCH"><br/><br/><br/><br/><br/>
+			</div>
+			
+			<div>
+				<input type="submit" name="prev" value="PREV">
+				<input type="submit" name="next" value="NEXT">
+			</div>
+		</div>
+	</div>
+	</form>
+</body>
+
+</html>
