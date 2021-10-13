@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
-    <title>List Order of food</title>
+    <title>Employee List</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16"
         href="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/images/logos/pixel-favicon.png">
@@ -23,7 +23,31 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
 <![endif]-->
+    <script src="js/sweetalert2.min.js"></script>
+    <script>
+        function deleteConfirm(params) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+        }
+
+    </script>
 </head>
 
 <body>
@@ -53,16 +77,13 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
-                                aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                        <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span
+                                class="hide-menu">Dashboard</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
                         <a href="chef-screen-history.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">History</span></a>
                     </li>
-<<<<<<< HEAD
-                    
-=======
                     <li style="padding: 10px 0 0;">
                         <a href="employee-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Employee</span></a>
@@ -71,7 +92,6 @@
                         <a href="food-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Food Menu</span></a>
                     </li>
->>>>>>> b7678e799ab91551814d68e1dc77ef6cde6a82e9
                 </ul>
             </div>
         </div>
@@ -81,7 +101,7 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">List Order</h4>
+                        <h4 class="page-title">Food Menu</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
@@ -91,9 +111,26 @@
                     <!-- /.col-lg-12 -->
                 </div>
 
-                <form action="detail-order-chef-screen.html" method="get" id="send-id-detail-form">
-                    <input type="hidden" name="idOrder" value="0">
-                </form>
+                <div class="container">
+                    <p class="h4 mb-4">Save Food</p>
+                    <!-- form-control: mb-4 ~ margin bottom 4 pixel
+                     col-4 ~ column span 4
+                 -->
+                    <form action="#" method="POST" class="form-group col-4" id="emp-update">
+
+                        <!-- Add hidden field of the Id to server updating -->
+                        <input type="hidden" th:field="*{id}" name="id" />
+                        <input type="text" placeholder="Id" class="form-control mb-4 col-4" name="id" />
+                        <input type="text" placeholder="Name" class="form-control mb-4 col-4" name="productName" />
+                        <input type="text" placeholder="Quantity" class="form-control mb-4 col-4" name="quantity" />
+                        <input type="text" placeholder="Status" class="form-control mb-4 col-4" name="status" />
+                        <input type="text" placeholder="Price" class="form-control mb-4 col-4" name="price" />
+
+                        <button type="submit" class="btn btn-info col-2" name="update">Save</button>
+                    </form>
+                </div>
+
+
                 <!-- /row -->
                 <div class="row">
                     <div class="col-sm-12">
@@ -102,41 +139,58 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th># Order</th>
-                                            <th>Table</th>
-                                            <th>Time</th>
-                                            <th>Done</th>
+                                            <th>Product ID</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity</th>
                                             <th>Status</th>
+                                            <th>Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- start -->
-                                        <tr class="detail-order-chef">
+                                        <tr class="click-to-fill-form-emp">
                                             <td>1</td>
-                                            <td>Ban so 1</td>
-                                            <td>15:00-10/06/2021</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Done</a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-danger">Print</a>
-                                            </td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
+                                        </tr>
+                                        <tr class="click-to-fill-form-emp">
+                                            <td>1</td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
+                                        </tr>
+                                        <tr class="click-to-fill-form-emp">
+                                            <td>1</td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
+                                        </tr>
+                                        <tr class="click-to-fill-form-emp">
+                                            <td>1</td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
+                                        </tr>
+                                        <tr class="click-to-fill-form-emp">
+                                            <td>1</td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
+                                        </tr>
+                                        <tr class="click-to-fill-form-emp">
+                                            <td>1</td>
+                                            <td>Sandwich</td>
+                                            <td>20</td>
+                                            <td>In Stock</td>
+                                            <td>$20</td>
                                         </tr>
                                         <!-- end -->
-                                        <!-- start -->
-                                        <tr class="detail-order-chef">
-                                            <td>2</td>
-                                            <td>Ban so 2</td>
-                                            <td>15:01-10/06/2021</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Done</a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-danger">Print</a>
-                                            </td>
-                                        </tr>
-                                        <!-- end -->
-
                                     </tbody>
                                 </table>
                             </div>
@@ -162,6 +216,8 @@
     <script src="js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>

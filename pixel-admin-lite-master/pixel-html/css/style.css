@@ -4335,6 +4335,10 @@ tr :hover, .click-to-look:hover  {
     background-color: #e3e3e3;
 }
 
+tr :hover, .detail-order-chef:hover  {
+    background-color: #e3e3e3;
+}
+
 tr :hover, .hover-background-color:hover  {
     background-color: #e3e3e3;
 }

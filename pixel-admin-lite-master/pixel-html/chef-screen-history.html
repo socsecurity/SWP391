@@ -20,31 +20,6 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="css/colors/green-dark.css" id="theme" rel="stylesheet">
-
-    <!-- SweetAlert2 -->
-    <script src="js/sweetalert2.min.js"></script>
-    <script>
-        function deleteConfirm(params) {
-            Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                    )
-                }
-            }) 
-        }
-        
-    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -80,13 +55,24 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                        <a href="chef-screen.html" class="waves-effect "><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
-                        <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span
-                                class="hide-menu">History</span></a>
+                        <a href="chef-screen-history.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">History</span></a>
                     </li>
+<<<<<<< HEAD
+=======
+                    <li style="padding: 10px 0 0;">
+                        <a href="employee-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Employee</span></a>
+                    </li>
+                    <li style="padding: 10px 0 0;">
+                        <a href="food-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Food Menu</span></a>
+                    </li>
+>>>>>>> b7678e799ab91551814d68e1dc77ef6cde6a82e9
                 </ul>
             </div>
         </div>
@@ -124,7 +110,7 @@
                                     </thead>
                                     <tbody>
                                         <!-- start -->
-                                        <tr class="hover-background-color">
+                                        <tr class="click-to-look">
                                             <td>1</td>
                                             <td>Ban so 1</td>
                                             <td>Dui ga chien</td>
@@ -134,17 +120,7 @@
                                             <td> <span class="badge bg-success">Done</span> </td>
                                         </tr>
                                         <!-- end -->
-                                        <!-- start -->
-                                        <tr class="hover-background-color">
-                                            <td>1</td>
-                                            <td>Ban so 1</td>
-                                            <td>Mi ga</td>
-                                            <td>1</td>
-                                            <td>15:00-10/06/2021</td>
-                                            <td>15:05-10/06/2021</td>
-                                            <td><span class="badge bg-danger">Canceled</span></td>
-                                        </tr>
-                                        <!-- end -->
+
                                     </tbody>
                                 </table>
                             </div>
@@ -169,7 +145,6 @@
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
     <script src="js/custom.js"></script>
 </body>
 

@@ -25,29 +25,29 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     
 <![endif]-->
-<script src="js/sweetalert2.min.js"></script>
-<script>
-    function deleteConfirm(params) {
-        Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                )
-            }
-        }) 
-    }
-    
-</script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script>
+        function deleteConfirm(params) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+        }
+
+    </script>
 </head>
 
 <body>
@@ -76,12 +76,29 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
+<<<<<<< HEAD
                         <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+=======
+                        <a href="chef-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
                     </li>
                     <li style="padding: 10px 0 0;">
-                        <a href="employee-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                        <a href="chef-screen-history.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i>
+                            <span class="hide-menu">History</span>
+                        </a>
+>>>>>>> b7678e799ab91551814d68e1dc77ef6cde6a82e9
+                    </li>
+                    <li style="padding: 10px 0 0;">
+                        <a href="employee-screen.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Employee</span></a>
+                    </li>
+                    <li style="padding: 10px 0 0;">
+                        <a href="food-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Food Menu</span></a>
                     </li>
                 </ul>
             </div>
@@ -103,18 +120,18 @@
                 </div>
 
                 <div class="container">
-                    <p class="h4 mb-4">Save Employee</p>
+                    <p class="h4 mb-4">Edit Employee</p>
                     <!-- form-control: mb-4 ~ margin bottom 4 pixel
                      col-4 ~ column span 4
                  -->
                     <form action="#" method="POST" class="form-group col-4" id="emp-update">
 
                         <!-- Add hidden field of the Id to server updating -->
-                        <input type="hidden" th:field="*{id}" name="id"/>
-                        <input type="text" placeholder="Fullname" class="form-control mb-4 col-4" name="fullname"/>
-                        <input type="text" placeholder="Address" class="form-control mb-4 col-4" name="address"/>
-                        <input type="text" placeholder="PhoneNumber" class="form-control mb-4 col-4" name="phone"/>
-                        <input type="text" placeholder="Role" class="form-control mb-4 col-4" name="role"/>
+                        <input type="hidden" th:field="*{id}" name="id" />
+                        <input type="text" placeholder="Fullname" class="form-control mb-4 col-4" name="fullname" />
+                        <input type="text" placeholder="Address" class="form-control mb-4 col-4" name="address" />
+                        <input type="text" placeholder="PhoneNumber" class="form-control mb-4 col-4" name="phone" />
+                        <input type="text" placeholder="Role" class="form-control mb-4 col-4" name="role" />
                         <button type="submit" class="btn btn-info col-2" name="update">Save</button>
                     </form>
                 </div>
@@ -223,7 +240,8 @@
                                                 <a href="#" class="btn btn-info btn-sm">
                                                     Update
                                                 </a>
-                                                <a href="#" class="btn btn-info btn-sm" onclick="deleteConfirm('warningConfirm')">
+                                                <a href="#" class="btn btn-info btn-sm"
+                                                    onclick="deleteConfirm('warningConfirm')">
                                                     Delete
                                                 </a>
                                             </td>
@@ -255,7 +273,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
 
-    
+
 </body>
 
 </html>
