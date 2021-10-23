@@ -1,13 +1,7 @@
-﻿USE [master]
+USE [master]
 GO
 /****** Object:  Database [Restaurant]    Script Date: 20-Oct-21 7:18:25 PM ******/
 CREATE DATABASE [Restaurant]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'Restaurant', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Restaurant.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'Restaurant_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Restaurant_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 ALTER DATABASE [Restaurant] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -278,16 +272,16 @@ INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (11, N'Ta
 INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (12, N'Table 12 - 6 people', N'AVAILABLE', NULL)
 SET IDENTITY_INSERT [dbo].[tbl_Table] OFF
 GO
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (1, N'12345     ', N'Nguyễn Thị Diễm Hà', N'43 Đống Đa', 23456757, 1)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (2, N'54321     ', N'Lê Hồng Bảo Ngân', N'20 Ngũ Hành Sơn', 87438684, 1)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (3, N'199       ', N'Ali Baldul', N'23 Aura', 76762617, 2)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (4, N'6650      ', N'Mina Anna', N'7 Tokyo', 87238737, 4)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (5, N'7565      ', N'Phạm Mạnh Tuấn', N'30 Phạm Ngũ Lão', 21767673, 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (6, N'8877      ', N'Nguyễn Thị Mỹ Hồng', N'28 Bạch Mã', 27364677, 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (7, N'5636      ', N'Phan Hoàng Minh', N'32 Pastel', 81277673, 2)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (8, N'7886      ', N'Lê Ánh Mỹ', N'54 Hoàng Diệu', 27671565, 5)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (9, N'7676      ', N'Trần Tiến Công', N'87 Ngô Quyền', 61762768, 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', 86256356, 4)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (1, N'12345     ', N'Nguyễn Thị Diễm Hà', N'43 Đống Đa', '23456757', 1)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (2, N'54321     ', N'Lê Hồng Bảo Ngân', N'20 Ngũ Hành Sơn', '87438684', 1)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (3, N'199       ', N'Ali Baldul', N'23 Aura', '76762617', 2)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (4, N'6650      ', N'Mina Anna', N'7 Tokyo', '87238737', 4)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (5, N'7565      ', N'Phạm Mạnh Tuấn', N'30 Phạm Ngũ Lão', '21767673', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (6, N'8877      ', N'Nguyễn Thị Mỹ Hồng', N'28 Bạch Mã', '27364677', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (7, N'5636      ', N'Phan Hoàng Minh', N'32 Pastel', '81277673', 2)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (8, N'7886      ', N'Lê Ánh Mỹ', N'54 Hoàng Diệu', '27671565', 5)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (9, N'7676      ', N'Trần Tiến Công', N'87 Ngô Quyền', '61762768', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', '86256356', 4)
 GO
 ALTER TABLE [dbo].[Order_detail]  WITH CHECK ADD  CONSTRAINT [FK_Order_detail_Product] FOREIGN KEY([product_id])
 REFERENCES [dbo].[Product] ([Product_id])
@@ -323,3 +317,4 @@ USE [master]
 GO
 ALTER DATABASE [Restaurant] SET  READ_WRITE 
 GO
+
