@@ -1,7 +1,9 @@
 USE [master]
 GO
-/****** Object:  Database [Restaurant]    Script Date: 20-Oct-21 7:18:25 PM ******/
+/****** Object:  Database [Restaurant]    Script Date: 10/26/2021 8:26:32 PM ******/
 CREATE DATABASE [Restaurant]
+ CONTAINMENT = NONE
+ 
 GO
 ALTER DATABASE [Restaurant] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -76,7 +78,7 @@ ALTER DATABASE [Restaurant] SET QUERY_STORE = OFF
 GO
 USE [Restaurant]
 GO
-/****** Object:  Table [dbo].[Category]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +92,7 @@ CREATE TABLE [dbo].[Category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order_detail]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[Order_detail]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -101,7 +103,7 @@ CREATE TABLE [dbo].[Order_detail](
 	[quantity] [int] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -118,7 +120,7 @@ CREATE TABLE [dbo].[Product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +134,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Order]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[tbl_Order]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -149,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Table]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[tbl_Table]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -165,7 +167,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 20-Oct-21 7:18:26 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 10/26/2021 8:26:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -212,6 +214,11 @@ INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 6
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 1, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 5, 7)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 3, 1)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (10, 25, 3)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (13, 26, 4)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (13, 27, 2)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (14, 27, 6)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (15, 30, 8)
 GO
 INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (1, N'Spaghetti', N'In Stock            ', 30, 2)
 INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (2, N'Mini Sandwiches', N'In Stock            ', 18, 1)
@@ -235,6 +242,14 @@ INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) 
 INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (20, N'Chips', N'In Stock            ', 18, 4)
 INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (21, N'Toast', N'In Stock            ', 20, 4)
 INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (22, N'Hotdog', N'In Stock            ', 15, 4)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (23, N'Milk', N'In Stock            ', 8, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (24, N'Coffee', N'In Stock            ', 9, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (25, N'MilkTea', N'In Stock            ', 7, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (26, N'Lava Flow Hawaiian Tropical', N'Out Of Stock        ', 10, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (27, N'Colla', N'In Stock            ', 5, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (28, N'Seasonal Sparkle', N'In Stock            ', 7, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (29, N'Rose Tea', N'In Stock            ', 5, 5)
+INSERT [dbo].[Product] ([Product_id], [name], [Status], [Price], [Category_id]) VALUES (30, N'Virgin Mojito', N'Out Of Stock        ', 11, 5)
 GO
 INSERT [dbo].[Role] ([role_Id], [name]) VALUES (1, N'manager ')
 INSERT [dbo].[Role] ([role_Id], [name]) VALUES (2, N'waiter ')
@@ -254,6 +269,9 @@ INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) V
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (10, CAST(N'2021-10-02T07:40:00.000' AS DateTime), N'PROCESSING', 1, 3)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (11, CAST(N'2021-10-02T08:34:00.000' AS DateTime), N'PROCESSING', 4, 5)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (12, CAST(N'2021-10-02T12:10:00.000' AS DateTime), N'CANCELED', 6, 10)
+INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (13, CAST(N'2021-12-02T10:10:20.000' AS DateTime), N'PROCESSING', 10, 5)
+INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (14, CAST(N'2021-12-05T09:10:25.000' AS DateTime), N'CANCELED', 5, 7)
+INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (15, CAST(N'2021-12-07T08:12:21.000' AS DateTime), N'COMPLETE', 6, 8)
 SET IDENTITY_INSERT [dbo].[tbl_Order] OFF
 GO
 SET IDENTITY_INSERT [dbo].[tbl_Table] ON 
@@ -272,16 +290,16 @@ INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (11, N'Ta
 INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (12, N'Table 12 - 6 people', N'AVAILABLE', NULL)
 SET IDENTITY_INSERT [dbo].[tbl_Table] OFF
 GO
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (1, N'12345     ', N'Nguyễn Thị Diễm Hà', N'43 Đống Đa', '23456757', 1)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (2, N'54321     ', N'Lê Hồng Bảo Ngân', N'20 Ngũ Hành Sơn', '87438684', 1)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (3, N'199       ', N'Ali Baldul', N'23 Aura', '76762617', 2)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (4, N'6650      ', N'Mina Anna', N'7 Tokyo', '87238737', 4)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (5, N'7565      ', N'Phạm Mạnh Tuấn', N'30 Phạm Ngũ Lão', '21767673', 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (6, N'8877      ', N'Nguyễn Thị Mỹ Hồng', N'28 Bạch Mã', '27364677', 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (7, N'5636      ', N'Phan Hoàng Minh', N'32 Pastel', '81277673', 2)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (8, N'7886      ', N'Lê Ánh Mỹ', N'54 Hoàng Diệu', '27671565', 5)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (9, N'7676      ', N'Trần Tiến Công', N'87 Ngô Quyền', '61762768', 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', '86256356', 4)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (1, N'12345     ', N'Nguyễn Thị Diễm Hà', N'43 Đống Đa', N'0901256789', 1)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (2, N'54321     ', N'Lê Hồng Bảo Ngân', N'20 Ngũ Hành Sơn', N'0905778278', 1)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (3, N'199       ', N'Ali Baldul', N'23 Aura', N'0901786689', 2)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (4, N'6650      ', N'Mina Anna', N'7 Tokyo', N'0906872637', 4)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (5, N'7565      ', N'Phạm Mạnh Tuấn', N'30 Phạm Ngũ Lão', N'0901786735', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (6, N'8877      ', N'Nguyễn Thị Mỹ Hồng', N'28 Bạch Mã', N'0901897654', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (7, N'5636      ', N'Phan Hoàng Minh', N'32 Pastel', N'0905667878', 2)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (8, N'7886      ', N'Lê Ánh Mỹ', N'54 Hoàng Diệu', N'0901883882', 5)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (9, N'7676      ', N'Trần Tiến Công', N'87 Ngô Quyền', N'0905782789', 3)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', N'0905123467  ', 4)
 GO
 ALTER TABLE [dbo].[Order_detail]  WITH CHECK ADD  CONSTRAINT [FK_Order_detail_Product] FOREIGN KEY([product_id])
 REFERENCES [dbo].[Product] ([Product_id])
@@ -317,4 +335,3 @@ USE [master]
 GO
 ALTER DATABASE [Restaurant] SET  READ_WRITE 
 GO
-
