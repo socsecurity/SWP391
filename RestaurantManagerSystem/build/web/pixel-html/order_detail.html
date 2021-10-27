@@ -25,7 +25,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     
 <![endif]-->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script src="js/sweetalert2.min.js"></script>
 <script>
     function deleteConfirm(params) {
         Swal.fire({
@@ -77,34 +78,32 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span
-                                class="hide-menu">Dashboard</span></a>
-                    </li>
-                    <li style="padding: 10px 0 0;">
-                        <a href="chef-screen-history.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
-                                aria-hidden="true"></i><span class="hide-menu">History</span></a>
+                        <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
                         <a href="employee-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Employee</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
-                        <a href="table-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
-                                aria-hidden="true"></i><span class="hide-menu">Table Management</span></a>
+                        <a href="table-screen.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Table</span></a>
+                    </li>
+                    <li style="padding: 10px 0 0;">
+                        <a href="food-screen.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Food Menu</span></a>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- Left navbar-header end -->
+        <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Order Table and View Menu</h4>
-                        <p class="text-subtitle text-muted">Here is Menu Food for order list</p>
-                        <a href="#" class="btn btn-info btn-sm">
-                            View Menu
-                        </a>
+                        <h4 class="page-title">Table Management</h4>
+                        <p class="text-subtitle text-muted">For employee and admin to check database status table</p>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
@@ -113,33 +112,28 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-
-                <div class="container">
-                    <p class="h4 mb-4">Order Food</p>
-                    <!-- form-control: mb-4 ~ margin bottom 4 pixel
-                     col-4 ~ column span 4
-                 -->
-                    <form action="#" method="POST" class="form-group col-4" id="emp-update">
-
-                        <!-- Add hidden field of the Id to server updating -->
-                        <input type="text" placeholder="Food ID" class="form-control mb-4 col-4" name="foodid"/>
-                        <input type="text" placeholder="Quantity" class="form-control mb-4 col-4" name="quantityfood"/>
-                        <br>
-                    
-                        <button onclick="Swal.fire()" class="btn btn-info col-2" name="add">Add</button>
-						<button onclick="Swal.fire()" class="btn btn-info col-2" name="delete">Delete</button>
-						<br><br>
-						<div class="row">
+				<p class="h4 mb-4">List Processing order</p><br>
+				<button onclick="Swal.fire()" class="btn btn-info col-2" name="cancel">Cancel</button>
+				<button onclick="Swal.fire()" class="btn btn-info col-2" name="print">Print</button>
+				<br><br>
+                 <!-- /row -->
+                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
+							<h5 style = "text-align: left; color: #FA6123; font-style: italic">Table ID: 1</h5>
+                            <p style = "text-align: left; color: #FA6123; font-style: italic">Order ID: 1<p> 
                             <div class="table-responsive">
+
                                 <table class="table">
                                     <thead>
+										
                                         <tr>
 											<th></th>
-                                            <th>Food ID</th>
+											<th>Product ID</th>
                                             <th>Name</th>
-                                            <th>Quantity</th>
+                                            <th>Price</th>
+											<th>Quantity</th>
+                                            <th>Sum</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -147,33 +141,54 @@
                                         <tr class="click-to-look">
                                             <td>1</td>
                                             <td>1</td>
-                                            <td>Spaghetti</td>
-                                            <td>3</td>
-                                        </tr>
-										<tr class="click-to-look">
-                                            <td>2</td>
-                                            <td>15</td>
-                                            <td>Apple pie</td>
-                                            <td>2</td>
-                                        </tr>
-										<tr class="click-to-look">
-                                            <td>3</td>
-                                            <td>25</td>
-                                            <td>MilkTea</td>
                                             <td>5</td>
-                                        </tr>  
+                                            <td>3</td>
+											<td>$50</td>
+											<td>$38</td>
+                                        </tr>
+										
+										<tr class="click-to-look">
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>5</td>
+											<td>$80</td>
+											<td>$38</td>
+                                        </tr>
+										
+										<tr class="click-to-look">
+                                            <td>3</td>
+                                            <td>9</td>
+                                            <td>12</td>
+                                            <td>10</td>
+											<td>$200</td>
+											<td>$38</td>
+                                        </tr>
+										                                          
                                         <!-- end -->
                                     </tbody>
+									
                                 </table>
+								<h5 style = "text-align: right; color: #FA6123; font-style: italic">Number of items: </h5>
+                                <p style = "text-align: right; color: #FA6123; font-style: italic">Total: $<p> 
                             </div>
                         </div>
                     </div>
                 </div>
-						<button onclick="Swal.fire()" class="btn btn-info col-2" name="confirm">
-						<a href = "chef-screen.html" >Confirm</a>
-						</button>
-                    </form>
-                </div>
+                <!-- /.row -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-primary  justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <!-- /.container-fluid -->
         </div>
