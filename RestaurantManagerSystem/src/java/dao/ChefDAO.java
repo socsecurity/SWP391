@@ -135,26 +135,4 @@ public class ChefDAO {
               
         return lu;
     } // end 
-    
-    public int changeStatusDone(int id) {
-        DBConnect db = DBConnect.getInstance();
-        int res =0;
-        String sql = "UPDATE tbl_Order \n" +
-            "set status = 'COMPLETE'\n" +
-            "where order_id = ?";
-        
-        try {
-            Connection con = db.openConnection();
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id);
-            res = stmt.executeUpdate();
-            stmt.close();
-            con.close();
-                       
-        } catch (Exception ex) {
-            Logger.getLogger(ChefDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-              
-        return res;
-    }
 }
