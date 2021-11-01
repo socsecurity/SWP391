@@ -16,10 +16,6 @@
         <servlet-name>loadhistory</servlet-name>
         <servlet-class>controller.loadhistory</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>changeStatus</servlet-name>
-        <servlet-class>controller.changeStatus</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -28,6 +24,15 @@
         <servlet-name>loadChefScreen</servlet-name>
         <url-pattern>/chef</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
+    <servlet>
+        <servlet-name>TableController</servlet-name>
+        <servlet-class>control.TableController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TableController</servlet-name>
+        <url-pattern>/TableController</url-pattern>
+=======
     <servlet-mapping>
         <servlet-name>LoadChefOrderDetail</servlet-name>
         <url-pattern>/order-detail</url-pattern>
@@ -35,10 +40,7 @@
     <servlet-mapping>
         <servlet-name>loadhistory</servlet-name>
         <url-pattern>/chef-history</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>changeStatus</servlet-name>
-        <url-pattern>/changeStatus</url-pattern>
+>>>>>>> xuancam
     </servlet-mapping>
     <session-config>
         <session-timeout>

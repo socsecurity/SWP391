@@ -124,9 +124,54 @@
                         <!-- Add hidden field of the Id to server updating -->
                         <input type="text" placeholder="Food ID" class="form-control mb-4 col-4" name="foodid"/>
                         <input type="text" placeholder="Quantity" class="form-control mb-4 col-4" name="quantityfood"/>
-                        <input type="text" placeholder="Status" class="form-control mb-4 col-4" name="status"/>
+                        <br>
                     
-                        <button onclick="Swal.fire()" class="btn btn-info col-2" name="update">Save</button>
+                        <button onclick="Swal.fire()" class="btn btn-info col-2" name="add">Add</button>
+						<button onclick="Swal.fire()" class="btn btn-info col-2" name="delete">Delete</button>
+						<br><br>
+						<div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+											<th></th>
+                                            <th>Food ID</th>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- start -->
+                                        <tr class="click-to-look">
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>Spaghetti</td>
+                                            <td>3</td>
+                                        </tr>
+										<tr class="click-to-look">
+                                            <td>2</td>
+                                            <td>15</td>
+                                            <td>Apple pie</td>
+                                            <td>2</td>
+                                        </tr>
+										<tr class="click-to-look">
+                                            <td>3</td>
+                                            <td>25</td>
+                                            <td>MilkTea</td>
+                                            <td>5</td>
+                                        </tr>  
+                                        <!-- end -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						<button onclick="Swal.fire()" class="btn btn-info col-2" name="confirm">
+						<a href = "chef-screen.html" >Confirm</a>
+						</button>
                     </form>
                 </div>
             </div>

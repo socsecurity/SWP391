@@ -117,12 +117,6 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <form action="changeStatus" method="POST">
-                                <input type="hidden" value="" name="orderid" id="orderID">
-                                <input type="hidden" value="MAKEDONE" name="command">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Done</button>
-                            </form>
-                            
                         </div>
                     </div>
                 </div>
@@ -166,7 +160,6 @@
         var idOrder = getUrlParameter('idOrder').toString();
         console.log(idOrder);
         $("#idOrderDetail").text(idOrder);
-        $("#orderID").val(idOrder);
     </script>
 </body>
 
