@@ -16,6 +16,14 @@
         <servlet-name>loadChefScreen</servlet-name>
         <url-pattern>/chef</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>TableController</servlet-name>
+        <servlet-class>control.TableController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TableController</servlet-name>
+        <url-pattern>/TableController</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
