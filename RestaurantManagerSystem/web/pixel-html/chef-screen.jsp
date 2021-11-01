@@ -106,7 +106,6 @@
                                             <th># Order</th>
                                             <th>Table</th>
                                             <th>Time</th>
-                                            <th>Done</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -118,11 +117,6 @@
                                             <td>${tempOrder.getOrderID()}</td>
                                             <td>${tempOrder.getTableName()}</td>
                                             <td>${tempOrder.getDate()}</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary" id="DoneOrder"
-                                                   onclick="noticeOrderConfirm()">
-                                                    Done</a>
-                                            </td>
                                             <td>
                                                 <a href="#" class="btn btn-sm btn-danger">Print</a>
                                             </td>
