@@ -216,6 +216,8 @@ $(document).ready(function () {
             }
         });
     }
+    
+    
 
     $('.detail-order-chef').click(function (e) {
         var formFields = [];

@@ -1,3 +1,11 @@
+<%-- 
+    Document   : chefscreenhistory
+    Created on : Oct 27, 2021, 5:52:33 PM
+    Author     : xuanc
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,15 +19,14 @@
     <link rel="icon" type="image/png" sizes="16x16"
         href="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/images/logos/pixel-favicon.png">
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="pixel-html/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="pixel-html/css/style.css" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/green-dark.css" id="theme" rel="stylesheet">
+    <link href="pixel-html/css/colors/green-dark.css" id="theme" rel="stylesheet">
+    <script src="pixel-html/js/sweetalert2.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,14 +42,13 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg "
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars
 "></i></a>
-                <div class="top-left-part"><a class="logo" href="chef-screen.html"><b><img
-                                src="../plugins/images/pixeladmin-logo.png" alt="home" /></b><span
-                            class="hidden-xs"><img src="../plugins/images/pixeladmin-text.png" alt="home" /></span></a>
+                <div class="top-left-part"><a class="logo" href="chef"><b><img
+                                src="plugins/images/pixeladmin-logo.png" alt="home" /></b><span
+                            class="hidden-xs"><img src="plugins/images/pixeladmin-text.png" alt="home" /></span></a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img"
-                                width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                        <a class="profile-pic" href="#"><b class="hidden-xs">Steave</b> </a>
                     </li>
                 </ul>
             </div>
@@ -55,11 +61,11 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen.html" class="waves-effect "><i class="fa fa-clock-o fa-fw"
+                        <a href="chef" class="waves-effect "><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen-history.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
+                        <a href="chef-history" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">History</span></a>
                     </li>
                 </ul>
@@ -75,7 +81,7 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li class="active"><a href="chef-screen.html">Dashboard</a></li>
+                            <li class="active"><a href="chef">Dashboard</a></li>
                             <li class="active">History</li>
                         </ol>
                     </div>
@@ -91,46 +97,32 @@
                                         <tr>
                                             <th># Order</th>
                                             <th>Table</th>
-                                            <th>Food</th>
-                                            <th>Quantity</th>
                                             <th>Time Order</th>
-                                            <th>Time success</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- start -->
-                                        <tr class="click-to-look">
-                                            <td>1</td>
-                                            <td>Ban so 1</td>
-                                            <td>Dui ga chien</td>
-                                            <td>2</td>
-                                            <td>15:00-10/06/2021</td>
-                                            <td>15:05-10/06/2021</td>
-                                            <td> <span class="badge bg-success">Done</span> </td>
-                                        </tr>
-                                        <!-- end -->
-
+                                        <c:forEach var="tempOrder" items="${historyOrderList}" >
+                                            <!-- start -->
+                                            <tr class="click-to-look">
+                                                <td>${tempOrder.getOrderID()}</td>
+                                                <td>${tempOrder.getTableName()}</td>
+                                                <td>${tempOrder.getDate()}</td>
+                                                <td>${tempOrder.getDate()}</td>
+                                                <td> 
+                                                    <span class="badge ${tempOrder.getStatus()=="COMPLETE" ? 'bg-success' : 'bg-danger'}">
+                                                        ${tempOrder.getStatus()}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <!-- end -->
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-primary  justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
             <!-- /.container-fluid -->
         </div>

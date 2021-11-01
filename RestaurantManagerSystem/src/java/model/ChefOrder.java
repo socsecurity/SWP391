@@ -16,6 +16,22 @@ public class ChefOrder {
     int OrderID;
     String TableName;
     Date date; 
+    String status = "PROCESSING";
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ChefOrder(int OrderID, String TableName, Date date, String status) {
+        this.OrderID = OrderID;
+        this.TableName = TableName;
+        this.date = date;
+        this.status = status;
+    }
 
     public int getOrderID() {
         return OrderID;
@@ -35,13 +51,6 @@ public class ChefOrder {
 
     public Date getDate() {
         return date;
-    }
-    
-    public String getDateFormat() {
-        String oldstring = date.toString();
-        LocalDateTime datetime = LocalDateTime.parse(oldstring, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
-        String newstring = datetime.format(DateTimeFormatter.ofPattern("HH:mm - dd-MM-yyyy"));
-        return newstring;
     }
 
     public void setDate(Date date) {
