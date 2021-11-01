@@ -4,16 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/LoginController.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/chef-screen-history.jsp</file>
             <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/loadChefScreen.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/index.html</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dao/ChefDAO.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/auth-login.html</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/index.jsp</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dbcontext/DBConnect.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dbcontext/Test.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/LoadChefOrderDetail.java</file>
             <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/chef-screen.jsp</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/model/CheckLogin.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dbcontext/DatabaseInfo.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/loadhistory.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/model/ChefOrder.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dao/ChefDAO.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/js/custom.js</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/detail-order-chef-screen.jsp</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/employee-screen.html</file>
         </group>
     </open-files>
 </project-private>
