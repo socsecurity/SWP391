@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Restaurant]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Database [Restaurant]    Script Date: 11/2/2021 8:37:17 PM ******/
 CREATE DATABASE [Restaurant]
  CONTAINMENT = NONE
  
@@ -78,7 +78,7 @@ ALTER DATABASE [Restaurant] SET QUERY_STORE = OFF
 GO
 USE [Restaurant]
 GO
-/****** Object:  Table [dbo].[Category]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[Category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order_detail]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[Order_detail]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +103,7 @@ CREATE TABLE [dbo].[Order_detail](
 	[quantity] [int] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +120,7 @@ CREATE TABLE [dbo].[Product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Order]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[tbl_Order]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Table]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[tbl_Table]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,13 +161,13 @@ CREATE TABLE [dbo].[tbl_Table](
 	[name] [nvarchar](30) NOT NULL,
 	[status] [nvarchar](20) NOT NULL,
 	[hour] [datetime] NULL,
-PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK__tbl_Tabl__B21E8F24986AC30C] PRIMARY KEY CLUSTERED 
 (
 	[table_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 10/26/2021 8:26:32 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 11/2/2021 8:37:17 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -276,17 +276,17 @@ SET IDENTITY_INSERT [dbo].[tbl_Order] OFF
 GO
 SET IDENTITY_INSERT [dbo].[tbl_Table] ON 
 
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (1, N'Table 1 - 4 people', N'AVAILABLE', NULL)
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (2, N'Table 2 - 2 people', N'NOT AVAILABLE', CAST(N'2021-10-01T17:00:00.000' AS DateTime))
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (3, N'Table 3 - 10 people', N'NOT AVAILABLE', CAST(N'2021-10-01T16:00:00.000' AS DateTime))
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (4, N'Table 4 - 5 people', N'AVAILABLE', NULL)
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (5, N'Table 5 - 8 people', N'NOT AVAILABLE', CAST(N'2021-10-01T17:20:00.000' AS DateTime))
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (6, N'Table 6 - 6 people', N'AVAILABLE', NULL)
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (1, N'Table 1 - 4 people', N'NOT AVAILABLE', CAST(N'2021-10-03T12:10:12.000' AS DateTime))
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (2, N'Table 2 - 2 people', N'AVAILABLE', NULL)
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (3, N'Table 3 - 10 people', N'NOT AVAILABLE', CAST(N'2021-10-12T09:12:02.000' AS DateTime))
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (4, N'Table 4 - 5 people', N'NOT AVAILABLE', CAST(N'2021-08-16T06:19:10.000' AS DateTime))
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (5, N'Table 5 - 8 people', N'AVAILABLE', NULL)
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (6, N'Table 6 - 6 people', N'NOT AVAILABLE', CAST(N'2021-10-28T20:10:03.000' AS DateTime))
 INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (7, N'Table 7 - 4 people', N'AVAILABLE', NULL)
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (8, N'Table 8 - 2 people', N'NOT AVAILABLE', CAST(N'2021-10-01T16:43:00.000' AS DateTime))
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (9, N'Table 9 - 10 people', N'NOT AVAILABLE', CAST(N'2021-10-01T17:12:00.000' AS DateTime))
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (10, N'Table 10 - 5 people', N'AVAILABLE', NULL)
-INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (11, N'Table 11 - 8 people', N'NOT AVAILABLE', CAST(N'2021-10-01T17:03:00.000' AS DateTime))
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (8, N'Table 8 - 2 people', N'AVAILABLE', NULL)
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (9, N'Table 9 - 10 people', N'AVAILABLE', NULL)
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (10, N'Table 10 - 5 people', N'NOT AVAILABLE', CAST(N'2021-10-20T19:10:30.000' AS DateTime))
+INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (11, N'Table 11 - 8 people', N'AVAILABLE', NULL)
 INSERT [dbo].[tbl_Table] ([table_id], [name], [status], [hour]) VALUES (12, N'Table 12 - 6 people', N'AVAILABLE', NULL)
 SET IDENTITY_INSERT [dbo].[tbl_Table] OFF
 GO
@@ -299,7 +299,7 @@ INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_numbe
 INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (7, N'5636      ', N'Phan Hoàng Minh', N'32 Pastel', N'0905667878', 2)
 INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (8, N'7886      ', N'Lê Ánh Mỹ', N'54 Hoàng Diệu', N'0901883882', 5)
 INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (9, N'7676      ', N'Trần Tiến Công', N'87 Ngô Quyền', N'0905782789', 3)
-INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', N'0905123467  ', 4)
+INSERT [dbo].[User] ([User_id], [password], [full_name], [Address], [phone_number], [role_id]) VALUES (10, N'7878      ', N'Nguyễn Ánh My', N'59 Lê Duẩn', N'0905123467', 4)
 GO
 ALTER TABLE [dbo].[Order_detail]  WITH CHECK ADD  CONSTRAINT [FK_Order_detail_Product] FOREIGN KEY([product_id])
 REFERENCES [dbo].[Product] ([Product_id])

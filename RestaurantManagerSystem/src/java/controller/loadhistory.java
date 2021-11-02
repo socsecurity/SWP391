@@ -7,22 +7,20 @@ package controller;
 import dao.ChefDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import model.ChefOrder;
 
+import model.ChefOrder;
 
 /**
  *
  * @author xuanc
  */
-@WebServlet("/chef/*")
-public class loadChefScreen extends HttpServlet {
+public class loadhistory extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +39,10 @@ public class loadChefScreen extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet loadChefScreen</title>");            
+            out.println("<title>Servlet loadhistory</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet loadChefScreen at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet loadhistory at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,10 +60,10 @@ public class loadChefScreen extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            ChefDAO cdao = new ChefDAO();
-            List<ChefOrder> lu = cdao.getAll();
-            request.setAttribute("ChefOrderList", lu);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("pixel-html/chef-screen.jsp");
+        ChefDAO cdao = new ChefDAO();
+            List<ChefOrder> lu = cdao.getDoneHistory();
+            request.setAttribute("historyOrderList", lu);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("pixel-html/chef-screen-history.jsp");
             dispatcher.forward(request, response);
     }
 

@@ -8,6 +8,18 @@
         <servlet-name>loadChefScreen</servlet-name>
         <servlet-class>controller.loadChefScreen</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadChefOrderDetail</servlet-name>
+        <servlet-class>controller.LoadChefOrderDetail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loadhistory</servlet-name>
+        <servlet-class>controller.loadhistory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>changeStatus</servlet-name>
+        <servlet-class>controller.changeStatus</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -23,6 +35,17 @@
     <servlet-mapping>
         <servlet-name>TableController</servlet-name>
         <url-pattern>/TableController</url-pattern>
+    <servlet-mapping>
+        <servlet-name>LoadChefOrderDetail</servlet-name>
+        <url-pattern>/order-detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loadhistory</servlet-name>
+        <url-pattern>/chef-history</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changeStatus</servlet-name>
+        <url-pattern>/changeStatus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -25,7 +25,19 @@
     <!-- Custom CSS -->
     <link href="pixel-html/css/style.css" rel="stylesheet">
     <!-- color CSS -->
-    <link href="pixel-html/css/colors/green-dark.css" id="theme" rel="stylesheet">>
+    <link href="pixel-html/css/colors/green-dark.css" id="theme" rel="stylesheet">
+    <script src="pixel-html/js/sweetalert2.min.js"></script>
+    <script>
+        function noticeOrderConfirm(params) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `The Food ${params} Done`,
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
+    </script>
 </head>
 
 <body>
@@ -35,7 +47,7 @@
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg "
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars
 "></i></a>
-                <div class="top-left-part"><a class="logo" href="#"><b><img src="plugins/images/pixeladmin-logo.png"
+                <div class="top-left-part"><a class="logo" href="chef"><b><img src="plugins/images/pixeladmin-logo.png"
                                 alt="home" /></b><span class="hidden-xs"><img
                                 src="plugins/images/pixeladmin-text.png" alt="home" /></span></a>
                 </div>
@@ -54,11 +66,11 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen.html" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
+                        <a href="chef" class="waves-effect active"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li style="padding: 10px 0 0;">
-                        <a href="chef-screen-history.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                        <a href="chef-history" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">History</span></a>
                     </li>
                 </ul>
@@ -80,7 +92,7 @@
                     <!-- /.col-lg-12 -->
                 </div>
 
-                <form action="detail-order-chef-screen.html" method="get" id="send-id-detail-form">
+                <form action="order-detail" method="get" id="send-id-detail-form">
                     <input type="hidden" name="idOrder" value="0">
                 </form>
                 <!-- /row -->
@@ -94,7 +106,6 @@
                                             <th># Order</th>
                                             <th>Table</th>
                                             <th>Time</th>
-                                            <th>Done</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -106,9 +117,6 @@
                                             <td>${tempOrder.getOrderID()}</td>
                                             <td>${tempOrder.getTableName()}</td>
                                             <td>${tempOrder.getDate()}</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Done</a>
-                                            </td>
                                             <td>
                                                 <a href="#" class="btn btn-sm btn-danger">Print</a>
                                             </td>
@@ -123,19 +131,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-primary  justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                
             </div>
             <!-- /.container-fluid -->
         </div>
