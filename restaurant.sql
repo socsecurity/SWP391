@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Restaurant]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Database [Restaurant]    Script Date: 11/3/2021 4:27:36 PM ******/
 CREATE DATABASE [Restaurant]
  CONTAINMENT = NONE
  
@@ -78,7 +78,7 @@ ALTER DATABASE [Restaurant] SET QUERY_STORE = OFF
 GO
 USE [Restaurant]
 GO
-/****** Object:  Table [dbo].[Category]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[Category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order_detail]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[Order_detail]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -100,10 +100,15 @@ GO
 CREATE TABLE [dbo].[Order_detail](
 	[order_id] [int] NOT NULL,
 	[product_id] [int] NOT NULL,
-	[quantity] [int] NOT NULL
+	[quantity] [int] NOT NULL,
+ CONSTRAINT [PK_Order_detail] PRIMARY KEY CLUSTERED 
+(
+	[order_id] ASC,
+	[product_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +125,7 @@ CREATE TABLE [dbo].[Product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -134,7 +139,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Order]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[tbl_Order]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +156,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Table]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[tbl_Table]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -167,7 +172,7 @@ CREATE TABLE [dbo].[tbl_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 11/2/2021 8:37:17 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 11/3/2021 4:27:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,28 +198,28 @@ INSERT [dbo].[Category] ([Category_id], [name]) VALUES (5, N'Drinks')
 GO
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (2, 1, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (2, 3, 2)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (2, 15, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (2, 10, 2)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (2, 15, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (3, 4, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (3, 5, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (3, 20, 3)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (4, 14, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (4, 10, 1)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (4, 14, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (5, 21, 7)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (7, 13, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (7, 1, 2)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (8, 16, 3)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (7, 13, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (8, 4, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (8, 7, 2)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (8, 16, 3)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (9, 12, 5)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (9, 18, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (10, 5, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (10, 6, 1)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 6, 3)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 1, 1)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 5, 7)
-INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 3, 1)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (10, 25, 3)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 1, 1)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (11, 6, 3)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 3, 1)
+INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (12, 5, 7)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (13, 26, 4)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (13, 27, 2)
 INSERT [dbo].[Order_detail] ([order_id], [product_id], [quantity]) VALUES (14, 27, 6)
