@@ -9,6 +9,7 @@
         <servlet-class>controller.loadChefScreen</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>LoadChefOrderDetail</servlet-name>
         <servlet-class>controller.LoadChefOrderDetail</servlet-class>
     </servlet>
@@ -19,6 +20,14 @@
     <servlet>
         <servlet-name>changeStatus</servlet-name>
         <servlet-class>controller.changeStatus</servlet-class>
+=======
+        <servlet-name>OrderDetailController</servlet-name>
+        <servlet-class>controller.OrderDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddOrderController</servlet-name>
+        <servlet-class>controller.AddOrderController</servlet-class>
+>>>>>>> nganha0310
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -30,7 +39,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>TableController</servlet-name>
-        <servlet-class>control.TableController</servlet-class>
+        <servlet-class>controller.TableController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>TableController</servlet-name>
@@ -47,6 +56,51 @@
         <servlet-name>changeStatus</servlet-name>
         <url-pattern>/changeStatus</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>OrderController</servlet-name>
+        <servlet-class>controller.OrderController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderController</servlet-name>
+        <url-pattern>/OrderController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>OrderDetailController</servlet-name>
+        <servlet-class>controller.OrderDetailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderDetailController</servlet-name>
+        <url-pattern>/OrderDetailController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddOrderController</servlet-name>
+        <servlet-class>controller.AddOrderController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddOrderController</servlet-name>
+        <url-pattern>/add-order</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResetTableController</servlet-name>
+        <servlet-class>controller.ResetTableController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetTableController</servlet-name>
+        <url-pattern>/reset</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ConfirmController</servlet-name>
+        <servlet-class>controller.ConfirmController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmController</servlet-name>
+        <url-pattern>/confirm</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
