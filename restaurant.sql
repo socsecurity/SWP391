@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Restaurant]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Database [Restaurant]    Script Date: 11/3/2021 5:52:43 PM ******/
 CREATE DATABASE [Restaurant]
  CONTAINMENT = NONE
  
@@ -78,7 +78,7 @@ ALTER DATABASE [Restaurant] SET QUERY_STORE = OFF
 GO
 USE [Restaurant]
 GO
-/****** Object:  Table [dbo].[Category]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[Category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order_detail]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[Order_detail]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -108,7 +108,7 @@ CREATE TABLE [dbo].[Order_detail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -125,7 +125,7 @@ CREATE TABLE [dbo].[Product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -139,7 +139,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Order]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[tbl_Order]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +156,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Table]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[tbl_Table]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -172,7 +172,7 @@ CREATE TABLE [dbo].[tbl_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 11/3/2021 4:27:36 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 11/3/2021 5:52:44 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -271,7 +271,7 @@ INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) V
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (7, CAST(N'2021-10-01T10:01:00.000' AS DateTime), N'COMPLETE', 1, 6)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (8, CAST(N'2021-10-01T11:12:00.000' AS DateTime), N'CANCELED', 3, 3)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (9, CAST(N'2021-10-02T07:10:00.000' AS DateTime), N'COMPLETE', 4, 5)
-INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (10, CAST(N'2021-10-02T07:40:00.000' AS DateTime), N'PROCESSING', 1, 3)
+INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (10, CAST(N'2021-10-02T07:40:00.000' AS DateTime), N'COMPLETE', 1, 3)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (11, CAST(N'2021-10-02T08:34:00.000' AS DateTime), N'PROCESSING', 4, 5)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (12, CAST(N'2021-10-02T12:10:00.000' AS DateTime), N'CANCELED', 6, 10)
 INSERT [dbo].[tbl_Order] ([order_id], [date], [status], [table_id], [user_id]) VALUES (13, CAST(N'2021-12-02T10:10:20.000' AS DateTime), N'PROCESSING', 10, 5)
