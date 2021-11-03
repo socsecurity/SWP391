@@ -10,6 +10,6 @@ public interface DatabaseInfo {
     public static String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     public static String url = "jdbc:sqlserver://127.0.0.1:1433;databaseName=Restaurant";
     public static String user = "sa";
-    public static String pass = "admin";
+    public static String pass = "123456";
     
 }

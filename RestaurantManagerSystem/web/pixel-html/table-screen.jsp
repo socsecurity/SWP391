@@ -151,13 +151,14 @@
                                                     </c:if>
                                                     </td>
                                                 <td>
-                                                    <a href="pixel-html/adddelete.html" class="btn btn-info btn-sm">
+                                                    <a href="OrderController?tid=${table.table_id}" class="btn btn-info btn-sm">
                                                         Order
                                                     </a>
-                                                    <a href="pixel-html/order_detail.html" class="btn btn-info btn-sm">
+                                                        
+                                                    <a href="OrderDetailController?tid=${table.table_id}" class="btn btn-info btn-sm">
                                                         Detail
                                                     </a>
-                                                    <a href="" class="btn btn-info btn-sm">
+                                                    <a href="reset?tid=${table.table_id}" class="btn btn-info btn-sm">
                                                         Reset
                                                     </a>
                                                 </td>
