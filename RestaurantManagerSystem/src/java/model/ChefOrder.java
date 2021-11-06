@@ -17,13 +17,17 @@ public class ChefOrder {
     String TableName;
     Date date; 
     String status = "PROCESSING";
+    int total = 0;
 
-    public String getStatus() {
-        return status;
+    public ChefOrder() {
     }
 
-    public void setStatus(String status) {
+    public ChefOrder(int OrderID, String TableName, Date date, String status, int totalPrice) {
+        this.OrderID = OrderID;
+        this.TableName = TableName;
+        this.date = date;
         this.status = status;
+        total = totalPrice;
     }
 
     public ChefOrder(int OrderID, String TableName, Date date, String status) {
@@ -31,6 +35,12 @@ public class ChefOrder {
         this.TableName = TableName;
         this.date = date;
         this.status = status;
+    }
+
+    public ChefOrder(int OrderID, String TableName, Date date) {
+        this.OrderID = OrderID;
+        this.TableName = TableName;
+        this.date = date;
     }
 
     public int getOrderID() {
@@ -56,14 +66,21 @@ public class ChefOrder {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    public ChefOrder() {
+    
+    public String getStatus() {
+        return status;
     }
 
-    public ChefOrder(int OrderID, String TableName, Date date) {
-        this.OrderID = OrderID;
-        this.TableName = TableName;
-        this.date = date;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
     
 }

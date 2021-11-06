@@ -3,31 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/LoginController.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/chef-screen-history.jsp</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/loadChefScreen.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dbcontext/Test.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/LoadChefOrderDetail.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/chef-screen.jsp</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/loadhistory.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/model/ChefOrder.java</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dao/ChefDAO.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/ProductController.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/AddFoodController.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/dao/ProductDAO.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/model/Product.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/src/java/controller/UpdateFoodController.java</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/food-screen.jsp</file>
+            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/adddelete.jsp</file>
             <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/js/custom.js</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/detail-order-chef-screen.jsp</file>
-            <file>file:/C:/Users/xuanc/Documents/NetBeansProjects/RestaurantManagerSystem/web/pixel-html/employee-screen.html</file>
-=======
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/web/pixel-html/adddelete.jsp</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/web/pixel-html/order_detail.jsp</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/AddOrderController.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/ResetTableController.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/dao/TableDAO.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/OrderDetailController.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/ConfirmController.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/TableController.java</file>
-            <file>file:/E:/2021Fall/SWP391/codeeeee/SWP391/RestaurantManagerSystem/src/java/controller/OrderController.java</file>
->>>>>>> nganha0310
         </group>
     </open-files>
 </project-private>

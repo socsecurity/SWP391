@@ -14,13 +14,24 @@ public class Employee {
     String name;
     String role;
     String number;
-    
-    public Employee(int empID, String name, String role, String number){
+    String address;
+
+    public Employee(int empID, String name, String address, String number, String role) {
         this.empID = empID;
         this.name = name;
         this.role = role;
         this.number = number;
+        this.address = address;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
     
     public int getEmpID(){
         return empID;
@@ -56,7 +67,7 @@ public class Employee {
     
     @Override
     public String toString(){
-        return "Employee{" + "empID = " + empID + ", name = " + name + ", number = " + number + ", role = " + role;
+        return "Employee{" + "empID = " + empID + ", name = " + name + ", address = " + address + ", number = " + number + ", role = " + role;
     }
     
 }

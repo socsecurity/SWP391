@@ -10,17 +10,29 @@ import java.io.IOException;
 import java.util.List;
 import model.Employee;
 import jakarta.servlet.*;
-import javax.servlet.http.httpservletrequest;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Quan Nguyen
  */
+@WebServlet("/employee/*")
 public class EmployeeController extends HttpServlet {
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throw ServletException, IOException {
-        response.setContentType("Text/html;charset=UTF-8");
-        List<Employee> listE = EmployeeDAO.getAllEmployees();
-        request.setAttribute("listE", listE);
-        request.getRequestDispatcher("pixel-html/employee-screen.jsp").forward(request, response);
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            List<Employee> listE = EmployeeDAO.getAllEmployeesAvailable();
+            request.setAttribute("listE", listE);
+            request.getRequestDispatcher("pixel-html/employee-screen.jsp").forward(request, response);
+        } catch (ServletException ex) {
+            Logger.getLogger(EmployeeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EmployeeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**

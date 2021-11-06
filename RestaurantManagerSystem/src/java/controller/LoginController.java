@@ -82,7 +82,7 @@ public class LoginController extends HttpServlet {
                 break;
             }
             case 1: 
-                response.sendRedirect("pixel-html/index.jsp");
+                response.sendRedirect("dashboard");
                 break;
             case 3:              
                 response.sendRedirect("chef");
